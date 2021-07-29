@@ -1,2 +1,2 @@
 # webpack-react-dom
-webpack5.x+react
+学习webpack5.x & react & typescript
