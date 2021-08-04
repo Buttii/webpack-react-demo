@@ -1,3 +1,3 @@
 # webpack-react-ts
 
-webpack5.x+react
+webpack5.x+react+ts
