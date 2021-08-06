@@ -1,34 +1,39 @@
 const path = require("path")
 
-const htmlWebpackPlugin = require("html-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+
 
 module.exports = {
-    entry: path.resolve('src/index.tsx'),
-    output: {
-        path: path.resolve("dist/js"),
-        filename: "[name].[contenthash:10].js"
-    },
-
+    entry: path.resolve("src/index.tsx"),
     resolve: {
-        mainFiles: ['index'],
         extensions: [".js", ".jsx", ".ts", ".tsx"]
     },
 
     module: {
         rules: [
-            {
-                test: /\.tsx?$/,
-                use: ["ts-loader"]
-            }
+            {test: /\.tsx?$/, use: [
+                {loader: "ts-loader"},
+                {loader: "babel-loader"}
+            ]},
+            {test: /\.less$/, use: [
+                {loader: "style-loader"},
+                {loader: "css-loader"},
+                {
+                    loader: "less-loader",
+                    options: {
+                        lessOptions: {
+                            javascriptEnabled: true
+                        }
+                    }
+                }
+            ]}
+
         ]
     },
+
     plugins: [
-        new htmlWebpackPlugin({
-            template: path.resolve("src/index.html")
+        new HtmlWebpackPlugin({
+            template: "index.html"
         })
     ]
-
-
-
-
 }

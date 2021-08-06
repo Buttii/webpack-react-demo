@@ -1,12 +1,11 @@
 {
   "name": "webpack-react-demo",
   "version": "1.0.0",
-  "description": "",
-  "private": true,
+  "description": "webpack5.x+react+ts",
+  "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack serve --config ./build/webpack.dev.js",
-    "build": "webpack"
+    "start": "webpack serve"
   },
   "repository": {
     "type": "git",
@@ -20,17 +19,26 @@
   },
   "homepage": "https://github.com/Buttii/webpack-react-demo#readme",
   "devDependencies": {
-    "@types/react": "^17.0.15",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@types/react": "^17.0.16",
     "@types/react-dom": "^17.0.9",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-import": "^1.13.3",
+    "css-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
-    "ts-loader": "^9.2.4",
+    "less": "^4.1.1",
+    "less-loader": "^10.0.1",
+    "style-loader": "^3.2.1",
+    "ts-loader": "^9.2.5",
     "typescript": "^4.3.5",
-    "webpack": "^5.47.1",
+    "webpack": "^5.49.0",
     "webpack-cli": "^4.7.2",
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "antd": "^4.16.10",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }
