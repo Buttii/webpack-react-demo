@@ -6,7 +6,7 @@ const tsImportPluginFactory = require("ts-import-plugin")
 
 
 module.exports = {
-    entry: path.resolve("src/index.tsx"),
+    entry: path.resolve(__dirname, "../src/index.tsx"),
     resolve: {
         extensions: [".js", ".jsx", ".ts", ".tsx"],
         mainFiles: ["index"]
@@ -51,7 +51,7 @@ module.exports = {
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: "index.html"
+            template: path.resolve(__dirname, "../public/index.html")
         })
     ]
 }
